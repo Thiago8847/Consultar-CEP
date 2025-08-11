@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="IMG/foto-logo.png" type="image/x-icon">
+    <title>Busca CEP BCARD</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+
+<body>
+
+<!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="./IMG/foto-logo.png">
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">CEP</a></li>
+        </nav>
+
+        <nav class="nav">
+            <a href="index2.html">ENDEREÇO</a></li>
+        </nav>
+            
+        <!--<nav class="nav">
+            <a href="index3.html">SEPARAR Nº</a></li>
+        </nav>-->
+
+    </header>
+
+
+    <div class="container">
+
+    <!-- Busca por CEP -->  
+        <div class="card1" role="main">
+            <h1>PESQUISAR POR <span>CEP</span></h1>
+            <label class="texto1" for="cep">Informe o CEP</label>
+
+            <div class="cep_caixa">
+                <input id="cep" type="text" inputmode="numeric" maxlength="9" placeholder="Ex.: 01001000" />
+                <button id="btn-colar">Colar</button>
+            </div>
+
+            <div class="row">
+                <button id="buscarCep">Pesquisar</button>
+                <button id="limparCep" class="secondary">Limpar</button>
+            </div>
+
+            <div id="statusCep" class="muted small">Digite um CEP e clique em <strong>Pesquisar</strong>.</div>
+      
+            <div id="resultadoCep" style="display:none" class="info">
+                <div class="field"><strong>CEP:</strong> <span id="r-cep"></span>
+                </div>
+                <div class="field"><strong>Logradouro:</strong> <span id="r-logradouro"></span>
+                </div>
+                <div class="field"><strong>Bairro:</strong> <span id="r-bairro"></span>
+                </div>
+                <div class="field"><strong>Cidade:</strong> <span id="r-localidade"></span>
+                </div>
+                <div class="field"><strong>UF:</strong> <span id="r-uf"></span>
+                </div>
+            </div>
+
+            <div id="erroCep" style="display:none" class="error"></div>
+        </div>
+
+    <!-- Busca por Endereço 
+        <div class="card" role="main">
+            <h1>PESQUISAR POR <span>ENDEREÇO</span></h1>
+            <label>UF</label>
+            <input id="uf" type="text" maxlength="2" placeholder="Ex.: SP" />
+            <label>Cidade</label>
+            <input id="cidade" type="text" placeholder="Ex.: São Paulo" />
+            <label>Logradouro</label>
+            <input id="logradouro" type="text" placeholder="Ex.: Praça da Sé" />
+            
+            <div class="row" style="margin-top:8px">
+                <button id="buscarEnd">Pesquisar</button>
+                <button id="limparEnd" class="secondary">Limpar</button>
+            </div>
+
+            <div id="statusEnd" class="muted small">Preencha os campos e clique em <strong>Pesquisar</strong>.</div>
+
+            <div id="resultadoEnd" style="display:none" class="info">
+                <table id="tabelaEnd">
+                      <thead>
+                          <tr><th>CEP</th><th>Logradouro</th><th>Bairro</th><th>Cidade</th><th>UF</th></tr>
+                      </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <div id="erroEnd" style="display:none" class="error"></div>
+        </div>
+        -->
+    </div>
+
+    <script src="JS/script.js"></script>
+
+    <footer class="rodape">
+        <p>&copy; 2025 Grupo Adriano Cobuccio. Desenvolvido por Thiago Assis. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

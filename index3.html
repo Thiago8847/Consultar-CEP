@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="IMG/foto-logo.png" type="image/x-icon">
+    <title>Busca CEP BCARD</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+
+<body>
+
+<!-- Cabeçalho -->
+    <header>
+        
+        <div class="logo">
+            <img src="./IMG/foto-logo.png">
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">CEP</a></li>
+        </nav>
+    
+        <nav class="nav">
+            <a href="index2.html">ENDEREÇO</a></li>
+        </nav>
+
+        <!--<nav class="nav">
+            <a href="index3.html">SEPARAR Nº</a></li>
+        </nav>-->
+
+    </header>
+
+
+    <div class="container">
+        <div class="card1" role="main">
+            <h1>Formatador de Sequências</h1>
+            <p>Cole várias sequências de números no campo abaixo — elas podem conter <code>.</code> e <code>-</code> (serão mantidos). O app vai juntar tudo usando <strong>espaço, hífen, espaço</strong> (<code> - </code>).</p>
+
+            <label for="input">Cole suas sequências (uma por linha ou separadas por espaços/virgulas):</label>
+            <textarea id="input" placeholder="Ex.: 123\n456.78\n99-88" oninput="if(document.getElementById('live').checked) formatInput()"></textarea>
+
+            <div class="controls">
+                <button onclick="formatInput()">Formatar</button>
+                <button class="secondary" onclick="clearAll()">Limpar</button>
+                <button class="secondary" onclick="pasteFromClipboard()">Colar (Área de Transferência)</button>
+                <div style="margin-left:auto" class="flex">
+                <label style="display:flex;align-items:center;gap:6px"><input id="live" type="checkbox"> Atualizar ao digitar</label>
+                </div>
+            </div>
+
+            <div class="note">O texto é dividido por quebras de linha, espaço em branco (tabs/spaces) e os separadores <code>, ; |</code>. Pontos <code>.</code> e hífens <code>-</code> dentro das sequências são preservados.</div>
+
+            <div class="examples">
+                <strong>Exemplo rápido</strong>
+                <div class="row" style="margin-top:8px">
+                <button class="small" onclick="loadExample(1)">Exemplo 1</button>
+                <button class="small" onclick="loadExample(2)">Exemplo 2</button>
+                <button class="small" onclick="loadExample(3)">Exemplo com vírgulas</button>
+                </div>
+            </div>
+
+            <h2 style="margin-top:18px">Resultado</h2>
+            <textarea id="output" class="output" readonly placeholder="O resultado aparecerá aqui"></textarea>
+
+            <div class="controls">
+                <button onclick="copyOutput()">Copiar Resultado</button>
+                <button class="secondary" onclick="selectOutput()">Selecionar Todo</button>
+                <button class="secondary" onclick="downloadAsFile()">Baixar .txt</button>
+            </div>
+
+            <div class="footer">Dica: se precisar de outro separador, posso editar isso — quer que use outro símbolo (por exemplo <code>|</code> ou <code>,</code>)?</div>
+        </div>
+    <!-- Busca por CEP 
+        <div class="card1" role="main">
+            <h1>PESQUISAR POR <span>CEP</span></h1>
+            <label class="texto1" for="cep">Informe o CEP</label>
+
+            <div class="cep_caixa">
+                <input id="cep" type="text" inputmode="numeric" maxlength="9" placeholder="Ex.: 01001000" />
+                <button id="btn-colar">Colar</button>
+            </div>
+
+            <div class="row">
+                <button id="buscarCep">Pesquisar</button>
+                <button id="limparCep" class="secondary">Limpar</button>
+            </div>
+
+            <div id="statusCep" class="muted small">Digite um CEP e clique em <strong>Pesquisar</strong>.</div>
+      
+            <div id="resultadoCep" style="display:none" class="info">
+                <div class="field"><strong>CEP:</strong> <span id="r-cep"></span>
+                </div>
+                <div class="field"><strong>Logradouro:</strong> <span id="r-logradouro"></span>
+                </div>
+                <div class="field"><strong>Bairro:</strong> <span id="r-bairro"></span>
+                </div>
+                <div class="field"><strong>Cidade:</strong> <span id="r-localidade"></span>
+                </div>
+                <div class="field"><strong>UF:</strong> <span id="r-uf"></span>
+                </div>
+            </div>
+
+            <div id="erroCep" style="display:none" class="error"></div>
+        </div>-->  
+
+    <!-- Busca por Endereço 
+ <div class="card1" role="main">
+    <h1>PESQUISAR POR <span>ENDEREÇO</span></h1>
+
+    <form class="form-endereco">
+        <div class="campo">
+            <label for="uf" class="texto2">UF</label>
+            <input id="uf" type="text" maxlength="2" placeholder="Ex.: SP" />
+        </div>
+        <div class="campo">
+            <label for="cidade" class="texto2">Cidade</label>
+            <input id="cidade" type="text" placeholder="Ex.: São Paulo" />
+        </div>
+        <div class="campo">
+            <label for="logradouro" class="texto2">Logradouro</label>
+            <input id="logradouro" type="text" placeholder="Ex.: Praça da Sé" />
+        </div>
+    </form>
+    
+    <div class="row" style="margin-top:8px">
+        <button id="buscarEnd">Pesquisar</button>
+        <button id="limparEnd" class="secondary">Limpar</button>
+    </div>
+
+    <div id="statusEnd" class="muted small">
+        Preencha os campos e clique em <strong>Pesquisar</strong>.
+    </div>
+
+    <div id="resultadoEnd" style="display:none" class="info">
+        <table id="tabelaEnd">
+            <thead>
+                <tr>
+                    <th>CEP</th><th>Logradouro</th><th>Bairro</th><th>Cidade</th><th>UF</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="erroEnd" style="display:none" class="error"></div>
+</div>-->
+
+    <script src="JS/script2.js"></script>
+
+    <footer class="rodape">
+        <p>&copy; 2025 Grupo Adriano Cobuccio. Desenvolvido por Thiago Assis. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

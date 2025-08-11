@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');    
+:root{
+    --cor1: #0359b6;
+    --cor2: #09cb70;
+    --cor3: #002a53;
+    --cor4: #f6ff00;
+    --cor5: #ffffff;
+    --cor6: #111111;
+
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+span {
+    color: var(--cor2);
+}
+body {
+    background-image: url('../IMG/fundo.png'); 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh;
+    margin: 0;
+    padding: 0px;
+    
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    color: #0e0e0e;
+    scroll-behavior: smooth;
+}
+/* Cabeçalho */
+header {
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: var(--cor3);
+    color: white;
+}
+header img{
+    display: flex;
+    align-items: center; 
+    height: 50px;
+    padding-right: 25px;
+    padding-left: 30px;
+}
+.logo {
+    display: flex;
+    align-items: center; 
+}
+.nav {
+    margin-right: 20px;
+    display: flex;
+    gap: 20px;
+}
+.nav a {
+    font-family: "Poppins", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--cor5);
+    text-decoration: none;
+    
+}
+.nav a:hover {
+    color: var(--cor4);
+}
+
+/* Inicio *********************/
+.container {
+    margin-top: 0;
+    min-height: 100vh;
+    padding-top: 50px;
+
+}
+/* Inicio CEP *********************/
+.card1{
+    background-image: url(../IMG/fundo2.png);
+    width:100%;
+    border-radius:5px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    padding:4px;
+}
+.card{
+    background:var(--cor5);
+    width:100%;
+    max-width:420px;
+    border-radius:5px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    padding:4px;
+    
+}
+.texto1{
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+h1{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 1000;
+    font-size: 28px;
+    text-align: center;
+    color: var(--cor1)
+    
+}
+label{
+    display:block;
+    font-size:13px;
+    margin-bottom:6px;
+    color:var(--muted);
+}
+.cep_caixa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+}
+#resultadoCep {
+  display: block;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background-color: #f3f6ff;
+}
+#erroCep{
+    display: block;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px 0 0 6px; /* arredondado só na esquerda */
+    font-size: 15px;
+    width: 200px;
+    box-sizing: border-box;
+    border-right: none; /* tira a borda direita pra grudar com o botão */
+}
+button{
+    padding:10px 12px;
+    border-radius:6px;
+    border:0;
+    background:#2d6cdf;
+    color:#fff;
+    font-weight:600;
+    cursor:pointer;
+    justify-content: center;
+    
+}
+button.secondary{
+    background:#6b7280
+}
+.row {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    gap: 10px;               
+    margin-top: 12px;        
+}
+#statusCep {
+  text-align: center;
+}
+
+.info{
+    margin-top:12px;
+    padding:12px;
+    border-radius:8px;
+    background:#f3f6ff;
+    border:1px solid #e6eefc
+}
+.error{
+    margin-top:12px;
+    color:#9b1c1c;
+    background:#ffecec;
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #f5c6c6
+}
+.field{
+    margin-top:8px;
+    font-size:14px
+}
+.muted{
+    color:var(--muted);
+    font-size:13px;
+    margin-top:8px
+}
+.small{
+    font-size:12px
+}
+.copy-btn{
+    margin-left:8px;
+    padding:6px 8px;
+    border-radius:6px;
+    border:0;
+    background:#10b981;
+    color:#fff;
+    cursor:pointer;
+    font-size:13px
+}
+.end_caixa {
+    
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 200px;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 500;
+   
+}
+
+.texto2{
+    display: flex;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    
+}
+
+
+/*table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px
+}*/
+th,td{
+    padding:6px;
+    border:1px solid #ddd;
+    font-size:13px;
+    text-align:left
+}
+th{
+    background:#eef2ff
+}
+
+/* rodape *********************/
+.rodape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    background-color: var(--cor6);
+    color: white; 
+    text-align: center; 
+
+}
+.form-endereco {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 200px;
+    margin: 0 auto;
+}
+.campo {
+    align-items: center;
+    gap: 8px;
+}
+.campo label {
+    width: 80px;
+}
+.campo input {
+    flex: 1;
+    padding: 8px;
+    box-sizing: border-box;
+    max-width: 300px; /* tamanho máximo visual */
+}
+
+
+#resultadoEnd {
+  display: block;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  background-color: #f3f6ff;
+}
+#statusEnd {
+  text-align: center;
+}
+  
